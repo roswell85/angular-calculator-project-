@@ -13,12 +13,14 @@ export class CalculatorComponent {
     this.showCalc = false
     this.spin = false
     this.btnText = "show"
+    this.res = "0"
   }
 
   inputValue = ''
   spin:boolean
   showCalc:boolean
   btnText:string;
+  res:string;
 
   f(){
     if(!this.showCalc)
@@ -57,7 +59,14 @@ export class CalculatorComponent {
   HandleButtonClick(cell: string, btn: HTMLButtonElement) {
     if (cell == '=') {
       this.inputValue = eval(this.inputValue);
-    } else {
+      this.res = this.inputValue
+
+    }
+    else if(cell=='result')
+      this.inputValue += this.res
+    else if(cell=='reset')
+      this.inputValue = "0"
+    else {
       this.inputValue += cell;
 
     }

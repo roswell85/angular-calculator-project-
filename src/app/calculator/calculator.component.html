@@ -14,6 +14,14 @@
     <button #btn (click)="HandleButtonClick(c,btn)">{{c}}</button>
     </td>
   </tr>
+  <tr>
+    <td colspan="2">
+      <button #btn (click) = "HandleButtonClick('result',btn)">result</button>
+    </td>
+    <td colspan="2">
+      <button #btn (click) = "HandleButtonClick('reset',btn)">reset</button>
+    </td>
+  </tr>
 
 </table>
   <button (click)="showUnShowCalculator()">{{this.btnText}}</button><span>  <app-spinner *ngIf="spin"></app-spinner>
