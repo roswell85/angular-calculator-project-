@@ -1,1 +1,14 @@
-<app-calculator></app-calculator>
+<app-header [menuData]="menuData" (menuChange)="HandleMenuChange($event)"></app-header>
+<div class="container" [ngSwitch]="active">
+  <app-home *ngSwitchCase="availablePages[0]"></app-home>
+  <app-calc *ngSwitchCase="availablePages[2]"></app-calc>
+  <app-about *ngSwitchCase="availablePages[1]"></app-about>
+
+
+
+</div>
+
+<app-footer style="">
+
+
+</app-footer>
